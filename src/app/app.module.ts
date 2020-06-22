@@ -13,6 +13,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { NavComponent } from './components/templete/nav/nav.component';
 import { MatButtonModule  } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table'
 
 import { HighchartsChartModule } from 'highcharts-angular';
 
@@ -36,7 +37,7 @@ import { HomeComponent } from './components/templete/home/home.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     HighchartsChartModule,
-    MatToolbarModule, MatMenuModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule,
+    MatToolbarModule, MatMenuModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatTableModule,
     HttpClientModule,
   ],
   providers: [],
