@@ -1,0 +1,10 @@
+.full-width {
+    width: 100%;
+  }
+
+  .matcard {
+    margin: auto;
+    width: 50%;
+    margin-top: 10px;
+
+  }

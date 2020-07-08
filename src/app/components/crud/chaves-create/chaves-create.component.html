@@ -1,0 +1,14 @@
+<mat-card class="matcard">
+    <mat-card-title>Importar Notas fiscais</mat-card-title>
+    <form>
+        <mat-form-field class="full-width">
+            <textarea matInput placeholder="Chaves..." rows="19" [(ngModel)]="chavesStr" name="chavesStr"></textarea>
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="createProcess()" color="primary">
+        Salvar
+    </button>
+    
+    <mat-spinner *ngIf="spinnerWait"></mat-spinner>
+</mat-card>

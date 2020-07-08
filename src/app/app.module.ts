@@ -21,7 +21,14 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { Chart1Component } from './components/chart/chart1/chart1.component';
 import { Chart2Component } from './components/chart/chart2/chart2.component';
 import { HomeComponent } from './components/templete/home/home.component';
+import { ChavesCreateComponent } from './components/crud/chaves-create/chaves-create.component';
 
+import { FormsModule }from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -30,7 +37,8 @@ import { HomeComponent } from './components/templete/home/home.component';
     NavComponent,
     Chart1Component,
     Chart2Component,
-    HomeComponent
+    HomeComponent,
+    ChavesCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +47,8 @@ import { HomeComponent } from './components/templete/home/home.component';
     HighchartsChartModule,
     MatToolbarModule, MatMenuModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatTableModule,
     HttpClientModule,
+    FormsModule, MatFormFieldModule, MatInputModule, MatCardModule, MatProgressBarModule, MatProgressSpinnerModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
