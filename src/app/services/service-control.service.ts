@@ -2,7 +2,7 @@ import { Chaves } from './../components/models/chaves.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ItemPrecoDt } from '../components/models/ItemPrecoRe.model';
+import { ItemPrecoRe } from '../components/models/ItemPrecoRe.model';
 
 
 @Injectable({
@@ -18,8 +18,8 @@ export class ServiceControlService {
     console.log(msg);
   }
 
-  read(): Observable<ItemPrecoDt[]>{
-    return this.http.get<ItemPrecoDt[]>(this.baseUrl + "/itemnota/listItemPerMonth");
+  read(): Observable<ItemPrecoRe[]>{
+    return this.http.get<ItemPrecoRe[]>(this.baseUrl + "/itemnota/listItemPerMonth");
   }
 
   readChart1(): Observable<string>{
@@ -28,5 +28,9 @@ export class ServiceControlService {
 
   createProcess(chaves: Chaves): Observable<Chaves> {
     return this.http.post<Chaves>(this.baseUrl + "/notafiscal/processalote", chaves)
+  }
+
+  listQtdItem(): Observable<ItemPrecoRe[]>{
+    return this.http.get<ItemPrecoRe[]>(this.baseUrl + "/itemnota/listQtdItem");
   }
 }

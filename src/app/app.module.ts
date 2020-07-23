@@ -29,6 +29,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import { List1qtdComponent } from './components/chart/list1qtd/list1qtd.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     Chart1Component,
     Chart2Component,
     HomeComponent,
-    ChavesCreateComponent
+    ChavesCreateComponent,
+    List1qtdComponent
   ],
   imports: [
     BrowserModule,
@@ -47,8 +51,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     HighchartsChartModule,
     MatToolbarModule, MatMenuModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatTableModule,
     HttpClientModule,
-    FormsModule, MatFormFieldModule, MatInputModule, MatCardModule, MatProgressBarModule, MatProgressSpinnerModule
-
+    FormsModule, MatFormFieldModule, MatInputModule, MatCardModule, MatProgressBarModule, MatProgressSpinnerModule,
+    MatPaginatorModule, MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

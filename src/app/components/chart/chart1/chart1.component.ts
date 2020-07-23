@@ -1,7 +1,7 @@
-import { Line } from './../../models/line.model';
+
 import { ServiceControlService } from './../../../services/service-control.service';
 import { Component, OnInit } from '@angular/core';
-import { ItemPrecoDt } from '../../models/ItemPrecoRe.model';
+
 
 import * as Highcharts from 'highcharts';
 
@@ -15,16 +15,10 @@ export class Chart1Component implements OnInit {
   Highcharts : typeof Highcharts = Highcharts;
   chartOptions : any ;
 
-//  itens: ItemPrecoDt[];// = [{codigo: '1', descricao: 'desc', dt: null, valorUnitario: 10}];
-//  itensChart1: Line[];
-//  displayedColumns: string[] = ['codigo', 'dt', 'descricao','valorUnitario'];
-
   constructor(private serCtrl: ServiceControlService) { }
 
   ngOnInit(): void {
-//    this.serCtrl.read().subscribe(its => {
-//      this.itens = its;
-//    });
+
 
 // https://stackoverflow.com/questions/54434380/how-to-use-add-series-and-update-methods-in-the-high-chart-wrapper-for-angular
 

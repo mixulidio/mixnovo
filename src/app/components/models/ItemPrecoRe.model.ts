@@ -1,4 +1,4 @@
-export interface ItemPrecoDt{
+export interface ItemPrecoRe{
     codigo: string;
     dt?: Date;
     descricao?: string;

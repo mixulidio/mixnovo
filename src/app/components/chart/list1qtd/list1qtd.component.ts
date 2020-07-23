@@ -6,12 +6,12 @@ import { ServiceControlService } from "./../../../services/service-control.servi
 import { ItemPrecoRe } from "../../models/ItemPrecoRe.model";
 
 @Component({
-  selector: "nfx-chart2",
-  templateUrl: "./chart2.component.html",
-  styleUrls: ["./chart2.component.css"],
+  selector: 'nfx-list1qtd',
+  templateUrl: './list1qtd.component.html',
+  styleUrls: ['./list1qtd.component.css']
 })
-export class Chart2Component implements OnInit {
-  displayedColumns: string[] = ["codigo", "dt", "descricao", "valorUnitario"];
+export class List1qtdComponent implements OnInit {
+  displayedColumns: string[] = ["codigo",  "descricao", "qtd"];
   dataSource = new MatTableDataSource<ItemPrecoRe>();
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -19,7 +19,7 @@ export class Chart2Component implements OnInit {
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
-    this.serCtrl.read().subscribe((its) => {
+    this.serCtrl.listQtdItem().subscribe((its) => {
       this.dataSource.data = its;
       this.dataSource.sort = this.sort;
     });
