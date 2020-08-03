@@ -1,3 +1,4 @@
+import { GastosPorMesComponent } from './components/chart/gastos-por-mes/gastos-por-mes.component';
 import { List1qtdComponent } from './components/chart/list1qtd/list1qtd.component';
 import { ChavesCreateComponent } from './components/crud/chaves-create/chaves-create.component';
 import { HomeComponent } from './components/templete/home/home.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'chart1', component: Chart1Component},
   {path: 'chart2', component: Chart2Component},
   {path: 'chaves-create', component: ChavesCreateComponent},
-  {path: 'list1qtd', component: List1qtdComponent}
+  {path: 'list1qtd', component: List1qtdComponent},
+  {path: 'nfx-gastos-por-mes', component: GastosPorMesComponent},
 ];
 
 @NgModule({

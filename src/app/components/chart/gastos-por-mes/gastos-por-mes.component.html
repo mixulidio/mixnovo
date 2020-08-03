@@ -1,0 +1,35 @@
+<p>gastos-por-mes works!</p>
+<div id="divtable" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort id="table">
+        <ng-container matColumnDef="data_emissao">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Data </th>
+            <td mat-cell *matCellDef="let element"> {{element.dataEmissao | date : 'yyyy-MM' }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="valor_total">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Total </th>
+            <td mat-cell *matCellDef="let element"> {{element.valorTotal}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="valor_desconto">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Desconto </th>
+            <td mat-cell *matCellDef="let element"> {{element.valorDesconto}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator pageSize="15" [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+<mat-card class="matcard">
+    <form>
+        <mat-form-field class="full-width">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput (keyup)="onKeyUpS($event.target.value)" placeholder="Meses" autocomplete="off" value="12">
+        </mat-form-field>
+    </form>
+</mat-card>
+ 

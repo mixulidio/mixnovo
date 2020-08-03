@@ -32,6 +32,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import { List1qtdComponent } from './components/chart/list1qtd/list1qtd.component';
+import { GastosPorMesComponent } from './components/chart/gastos-por-mes/gastos-por-mes.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { List1qtdComponent } from './components/chart/list1qtd/list1qtd.componen
     Chart2Component,
     HomeComponent,
     ChavesCreateComponent,
-    List1qtdComponent
+    List1qtdComponent,
+    GastosPorMesComponent
   ],
   imports: [
     BrowserModule,

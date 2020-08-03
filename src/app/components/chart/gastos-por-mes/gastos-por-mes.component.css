@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+}
+
+#divtable{
+    margin: 1.5em;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.matcard {
+    margin: auto;
+    width: 50%;
+    margin-bottom: 10px;
+}

@@ -1,3 +1,4 @@
+import { NotaFiscal } from './../components/models/notaFiscal.model';
 import { Chaves } from './../components/models/chaves.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -27,7 +28,11 @@ export class ServiceControlService {
   }
 
   createProcess(chaves: Chaves): Observable<Chaves> {
-    return this.http.post<Chaves>(this.baseUrl + "/notafiscal/processalote", chaves)
+    return this.http.post<Chaves>(this.baseUrl + "/notafiscal/processalote", chaves);
+  }
+
+  gastosPorMes(qtdMeses: number): Observable<NotaFiscal[]>{
+    return this.http.get<NotaFiscal[]>(this.baseUrl + "/notafiscal/gastosPorMes/" + qtdMeses);
   }
 
   listQtdItem(): Observable<ItemPrecoRe[]>{
