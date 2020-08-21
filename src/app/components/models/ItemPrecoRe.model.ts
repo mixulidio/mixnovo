@@ -1,8 +1,11 @@
-export interface ItemPrecoRe{
+export interface ItemNota{
+    id?:number;
     codigo: string;
-    dt?: Date;
     descricao?: string;
+    qtd?: number;
+    unidade?: string;
+    dt?: Date;
     valorUnitario?: number;
     variacao?: number;
-    qtd?: number;
+    valorTotal?: number;
 }

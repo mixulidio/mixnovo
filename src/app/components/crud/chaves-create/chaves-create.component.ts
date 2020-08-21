@@ -1,10 +1,11 @@
+import { NotaFiscal } from './../../models/notaFiscal.model';
 import { Chaves } from './../../models/chaves.model';
 import { ServiceControlService } from './../../../services/service-control.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'nfx-chaves-create',
+  selector: 'chaves-create',
   templateUrl: './chaves-create.component.html',
   styleUrls: ['./chaves-create.component.css']
 })
@@ -13,6 +14,7 @@ export class ChavesCreateComponent implements OnInit {
   chavesStr: string;
   chaves : Chaves = {chave: null}; // TODO new ?
   spinnerWait = false;
+  chavesParaConsulta: NotaFiscal[];
   
   constructor(private serviceControlService: ServiceControlService, private router: Router) { }
 
@@ -25,14 +27,29 @@ export class ChavesCreateComponent implements OnInit {
     this.serviceControlService.createProcess(this.chaves).subscribe(ret => {
       this.spinnerWait = false;
       if( ret != null){
-        this.chavesStr = "Erros:";
+        var erros:string;
         ret.chave.forEach(element => {
-          this.chavesStr = this.chavesStr + "\n" + element;
+          erros = erros + "\n" + element;
         });
-        console.log(ret);
-      } else {
-        this.chavesStr = null;
+        if(erros != null ){
+          this.chavesStr = "Chaves com erros ou já importadas:" + erros;
+        }
       }
+
+      this.chaves.chave.forEach(function (value) {
+        this.chavesParaConsulta = value;
+        console.log(value);
+      });
+
+
+/*
+      this.chavesParaConsulta = this.chaves.chave.map(function (p) {
+        var m :NotaFiscal;
+        m.chave = p;
+        return m;
+      })
+*/
+      console.log(this.chavesParaConsulta);
     })
   }
 

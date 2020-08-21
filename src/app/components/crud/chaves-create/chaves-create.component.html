@@ -12,3 +12,8 @@
     
     <mat-spinner *ngIf="spinnerWait"></mat-spinner>
 </mat-card>
+
+
+<div *ngIf="chavesParaConsulta != null" >
+    <nota-fiscal *ngFor="let c of chavesParaConsulta" (chave)="c.chave"></nota-fiscal>
+</div>

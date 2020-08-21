@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule }  from '@angular/common/http'
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { HttpClientModule }  from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +34,16 @@ import {MatSortModule} from '@angular/material/sort';
 import { List1qtdComponent } from './components/chart/list1qtd/list1qtd.component';
 import { GastosPorMesComponent } from './components/chart/gastos-por-mes/gastos-por-mes.component';
 
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { ChaveImportQrcodeComponent } from './components/crud/chave-import-qrcode/chave-import-qrcode.component';
+import { NotaFiscalComponent } from './components/crud/nota-fiscal/nota-fiscal.component';
+import { ChaveReadQrcodeComponent } from './components/crud/chave-read-qrcode/chave-read-qrcode.component';
+
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +54,10 @@ import { GastosPorMesComponent } from './components/chart/gastos-por-mes/gastos-
     HomeComponent,
     ChavesCreateComponent,
     List1qtdComponent,
-    GastosPorMesComponent
+    GastosPorMesComponent,
+    ChaveImportQrcodeComponent,
+    NotaFiscalComponent,
+    ChaveReadQrcodeComponent
   ],
   imports: [
     BrowserModule,
@@ -55,8 +68,9 @@ import { GastosPorMesComponent } from './components/chart/gastos-por-mes/gastos-
     HttpClientModule,
     FormsModule, MatFormFieldModule, MatInputModule, MatCardModule, MatProgressBarModule, MatProgressSpinnerModule,
     MatPaginatorModule, MatSortModule,
+    ZXingScannerModule
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

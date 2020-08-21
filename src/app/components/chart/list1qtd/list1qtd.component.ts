@@ -3,16 +3,16 @@ import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatSort } from "@angular/material/sort";
 import { ServiceControlService } from "./../../../services/service-control.service";
-import { ItemPrecoRe } from "../../models/ItemPrecoRe.model";
+import { ItemNota } from "../../models/ItemPrecoRe.model";
 
 @Component({
-  selector: 'nfx-list1qtd',
+  selector: 'list1qtd',
   templateUrl: './list1qtd.component.html',
   styleUrls: ['./list1qtd.component.css']
 })
 export class List1qtdComponent implements OnInit {
   displayedColumns: string[] = ["descricao", "qtd"];
-  dataSource = new MatTableDataSource<ItemPrecoRe>();
+  dataSource = new MatTableDataSource<ItemNota>();
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   constructor(private serCtrl: ServiceControlService) {}

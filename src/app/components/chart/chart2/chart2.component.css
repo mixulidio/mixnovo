@@ -3,15 +3,14 @@ table {
 }
 
 #divtable{
-    margin: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .full-width {
     width: 100%;
 }
 
-.matcard {
-    margin: auto;
-    width: 50%;
-    margin-bottom: 10px;
-}

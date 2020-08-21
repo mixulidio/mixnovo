@@ -1,4 +1,7 @@
-<p>gastos-por-mes works!</p>
+
+Colocar mais uma coluna de quantidade de itens, e qtd de notas?
+formatar valores para reais e R$
+
 <div id="divtable" class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort id="table">
         <ng-container matColumnDef="data_emissao">
@@ -19,7 +22,7 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <mat-paginator pageSize="15" [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons></mat-paginator>
+    <mat-paginator pageSize="10" [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons></mat-paginator>
 </div>
 
 <mat-card class="matcard">

@@ -1,0 +1,59 @@
+.NFCCabecalho {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  /*width: 400px;*/
+}
+.NFCCabecalho_Titulo {
+  font-size: 14px;
+}
+.NFCCabecalho_SubTitulo {
+  font-size: 12px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.NFCCabecalho_SubTitulo1 {
+  font-size: 11px;
+}
+.NFCDetalhe_Item {
+  font-size: 11px;
+}
+ 
+.borda-pontilhada-botton {
+  border-right: none;
+  padding-right: 0px;
+  border-top: none;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  border-left: none;
+  padding-top: 0px;
+  border-bottom: #000000 1px dashed;
+}
+.borda-pontilhada-top {
+  border-right: none;
+  padding-right: 0px;
+  border-top: #000000 1px dashed;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  border-left: none;
+  padding-top: 0px;
+  border-bottom: none;
+}
+.borda-pontilhada-3D {
+  border-right: #000000 1px dashed;
+  padding-right: 0px;
+  border-top: #000000 1px dashed;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  border-left: none;
+  padding-top: 0px;
+  border-bottom: #000000 1px dashed;
+}
+.borda-pontilhada-top-botton {
+  border-right: none;
+  padding-right: 0px;
+  border-top: #000000 1px dashed;
+  padding-left: 0px;
+  padding-bottom: 4px;
+  border-left: none;
+  padding-top: 4px;
+  border-bottom: #000000 1px dashed;
+}

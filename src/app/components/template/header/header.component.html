@@ -1,45 +1,37 @@
 <mat-toolbar class="mat-elevation-z4">
-    <span>Minha Inflação</span>
- 
     <span class="example-fill-remaining-space">
-        <a mat-button routerLink="/home" routerLinkActive="mat-accent">
+        <a mat-button routerLink="/home" routerLinkActive="mat-primary">
             <i class="material-icons">
                 dashboard
             </i>
-            Início
-        </a>
-        <!-- 
-        <a mat-button  routerLink="/chart1" routerLinkActive="mat-accent">
-            <i class="material-icons">
-                timeline
-            </i>
-            Gráfico 1
-        </a>
-        -->
-        <a mat-button  routerLink="/chart2" routerLinkActive="mat-accent">
-            <i class="material-icons">
-                timeline
-            </i>
-            Lista Produtos
-        </a>
-        <a mat-button  routerLink="/list1qtd" routerLinkActive="mat-accent">
-            <i class="material-icons">
-                analytics
-            </i>
-            Qtd Produtos
-        </a>
-        <a mat-button  routerLink="/nfx-gastos-por-mes" routerLinkActive="mat-accent">
-            <i class="material-icons">
-                analytics
-            </i>
-            Gastos por mês
-        </a>
-        <a mat-button  routerLink="/chaves-create" routerLinkActive="mat-accent">
-            <i class="material-icons">
-                analytics
-            </i>
-            Importar Nfs
+            Minha Inflação
         </a>
     </span>
-    <span>Mix Nf-x</span>
+
+    <button mat-button [matMenuTriggerFor]="menuListas">
+        <mat-icon>list</mat-icon>
+        Listas
+    </button>
+    <mat-menu #menuListas="matMenu">
+        <button mat-menu-item routerLink="/chart2"   routerLinkActive="active">Lista Itens</button>
+        <button mat-menu-item routerLink="/list1qtd" routerLinkActive="active">Qtd Produtos</button>
+        <button mat-menu-item routerLink="/gastos-por-mes" routerLinkActive="active">Gastos por mês</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="menuCadNota">
+        <mat-icon>analytics</mat-icon>
+        Cadastrar Notas
+    </button>
+    <mat-menu #menuCadNota="matMenu" >
+        <button mat-menu-item routerLink="/chaves-create" routerLinkActive="active">
+            Importar Nfs com chave
+        </button>
+        <button mat-menu-item routerLink="/chave-import-qrcode" routerLinkActive="active">
+            Importar Nfs - QR Code
+        </button>
+        <button mat-menu-item routerLink="/chave-read-qrcode" routerLinkActive="active">
+            Consultar Nfs - QR Code
+        </button>
+    </mat-menu>
+    
 </mat-toolbar>

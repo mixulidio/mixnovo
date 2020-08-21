@@ -3,16 +3,16 @@ import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatSort } from "@angular/material/sort";
 import { ServiceControlService } from "./../../../services/service-control.service";
-import { ItemPrecoRe } from "../../models/ItemPrecoRe.model";
+import { ItemNota } from "../../models/ItemPrecoRe.model";
 
 @Component({
-  selector: "nfx-chart2",
+  selector: "chart2",
   templateUrl: "./chart2.component.html",
   styleUrls: ["./chart2.component.css"],
 })
 export class Chart2Component implements OnInit {
-  displayedColumns: string[] = ["codigo", "dt", "descricao", "valorUnitario"];
-  dataSource = new MatTableDataSource<ItemPrecoRe>();
+  displayedColumns: string[] = ["dt", "descricao", "valorUnitario"];
+  dataSource = new MatTableDataSource<ItemNota>();
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   constructor(private serCtrl: ServiceControlService) {}

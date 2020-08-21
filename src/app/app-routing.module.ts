@@ -1,3 +1,6 @@
+import { ChaveReadQrcodeComponent } from './components/crud/chave-read-qrcode/chave-read-qrcode.component';
+import { NotaFiscalComponent } from './components/crud/nota-fiscal/nota-fiscal.component';
+import { ChaveImportQrcodeComponent } from './components/crud/chave-import-qrcode/chave-import-qrcode.component';
 import { GastosPorMesComponent } from './components/chart/gastos-por-mes/gastos-por-mes.component';
 import { List1qtdComponent } from './components/chart/list1qtd/list1qtd.component';
 import { ChavesCreateComponent } from './components/crud/chaves-create/chaves-create.component';
@@ -9,13 +12,18 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
+  //{ path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'home/:id', component: HomeComponent},
   {path: 'chart1', component: Chart1Component},
   {path: 'chart2', component: Chart2Component},
   {path: 'chaves-create', component: ChavesCreateComponent},
   {path: 'list1qtd', component: List1qtdComponent},
-  {path: 'nfx-gastos-por-mes', component: GastosPorMesComponent},
+  {path: 'gastos-por-mes', component: GastosPorMesComponent},
+  {path: 'chave-import-qrcode', component: ChaveImportQrcodeComponent},
+  {path: 'chave-read-qrcode', component: ChaveReadQrcodeComponent},
+  {path: 'nota-fiscal/:chave', component: NotaFiscalComponent},
 ];
 
 @NgModule({

@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
-  selector: 'nfx-gastos-por-mes',
+  selector: 'gastos-por-mes',
   templateUrl: './gastos-por-mes.component.html',
   styleUrls: ['./gastos-por-mes.component.css']
 })

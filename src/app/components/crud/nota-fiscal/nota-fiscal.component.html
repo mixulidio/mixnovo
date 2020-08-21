@@ -1,0 +1,89 @@
+
+<p *ngIf="notaFiscal == null && !spinnerWait"> Não cadastrada </p>
+
+<mat-spinner *ngIf="spinnerWait"></mat-spinner>
+
+<table style="margin: 0.5em;" width="100%" border="0" cellspacing="0" cellpadding="0" *ngIf="notaFiscal != undefined">
+     <table width="390" border="1" cellspacing="0" cellpadding="0" bordercolor="#0D000A" bgcolor="#FFFFEA" class="mat-elevation-z8">
+      <tr>
+        <td>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="borda-pontilhada-botton">
+                <table class="NFCCabecalho" border="0">
+                  <tr>
+                    <td class="NFCCabecalho_SubTitulo" align="left"> {{ notaFiscal.local }} </td>
+                  </tr>
+                </table>
+                <table class="NFCCabecalho" border="0">
+                  <tr>
+                    <td class="NFCCabecalho_SubTitulo1" align="left">                      PORTO ALEGRE,                      RS</td>
+                  </tr>
+                  <tr>
+                    <td class="NFCCabecalho_SubTitulo1" align="left">{{ notaFiscal.cnpj }}</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table border="0" style="width: 100%;">
+                  <tr>
+                    <td class="NFCCabecalho_SubTitulo" align="center">
+                      Data de Emissão: {{ notaFiscal.dataEmissao }} </td>
+                  </tr>
+                  <tr>
+                    <td class="NFCCabecalho_SubTitulo" align="center">
+                    Consulte pela Chave de Acesso em https://www.sefaz.rs.gov.br/NFCE
+                    <a href="https://www.sefaz.rs.gov.br/NFE/NFE-NFC.aspx?chaveNFe={{ notaFiscal.chave }}">{{ notaFiscal.chave }}</a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="borda-pontilhada-botton">
+                <table class="NFCCabecalho" border="0">
+                  <tr>
+                    <td class="borda-pontilhada-3D NFCDetalhe_Item" align="left" style="width: 300px;">Descrição</td>
+                    <td class="borda-pontilhada-3D NFCDetalhe_Item" align="center" style="width: 50px;">Qtde</td>
+                    <td class="borda-pontilhada-3D NFCDetalhe_Item" align="left" style="width: 10px;">Un</td>
+                    <td class="borda-pontilhada-3D NFCDetalhe_Item" align="right" style="width: 60px;">Vl Unit</td>
+                    <td class="borda-pontilhada-top-botton" align="right" style="width: 60px;">Vl Total</td>
+                  </tr>
+                  <tr *ngFor="let it of notaFiscal.listaItens">
+                    <td class="NFCDetalhe_Item" align="left" >{{it.descricao}}</td>
+                    <td class="NFCDetalhe_Item" align="center" >{{it.qtd}}</td>
+                    <td class="NFCDetalhe_Item" align="left" >{{it.unidade}}</td>
+                    <td class="NFCDetalhe_Item" align="right" >{{it.valorUnitario}} </td>
+                    <td class="NFCDetalhe_Item" align="right" >{{it.valorTotal}}</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="borda-pontilhada-botton">
+                <table class="NFCCabecalho" border="0">
+                  <tr>
+                    <td class="NFCDetalhe_Item" align="left" style="width: 410px;">Valor total R$</td>
+                    <td class="NFCDetalhe_Item" align="right" style="width: 70px;">{{ notaFiscal.valorTotal }}</td>
+                  </tr>
+                  <tr>
+                    <td class="NFCDetalhe_Item" align="left" style="width: 410px;">Valor descontos R$</td>
+                    <td class="NFCDetalhe_Item" align="right" style="width: 70px;">{{ notaFiscal.valorDesconto }}</td>
+                  </tr>
+                  <tr> 
+                  </tr>
+                  <tr> 
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="borda-pontilhada-botton NFCDetalhe_Item " align="right" style="FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px;">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>

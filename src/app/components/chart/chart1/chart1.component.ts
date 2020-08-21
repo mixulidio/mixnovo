@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 
 @Component({
-  selector: 'nfx-chart1',
+  selector: 'chart1',
   templateUrl: './chart1.component.html',
   styleUrls: ['./chart1.component.css']
 })
