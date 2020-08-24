@@ -13,17 +13,15 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
   styleUrls: ['./gastos-por-mes.component.css']
 })
 export class GastosPorMesComponent implements OnInit {
-  private subject: Subject<number> = new Subject();
-  displayedColumns: string[] = ["data_emissao", "valor_total", "valor_desconto"];
+  displayedColumns: string[] = ["dataEmissao", "valorTotal", "valorDesconto", "qtdNotas", "qtdItens"];
   dataSource = new MatTableDataSource<NotaFiscal>();
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
+  private subject: Subject<number> = new Subject();
 
   constructor(private serCtrl: ServiceControlService) {}
 
   ngOnInit(): void {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
     this.consultaMeses(12);
     this.subject.pipe(
       debounceTime(600),
@@ -44,9 +42,13 @@ export class GastosPorMesComponent implements OnInit {
   }
 
   consultaMeses(qtd: number){
-    if(qtd != null && qtd != undefined && qtd > 0)
-    this.serCtrl.gastosPorMes(qtd).subscribe((its) => {
-      this.dataSource.data = its;
-    });
+    if(qtd != null && qtd != undefined && qtd > 0){
+      this.dataSource.paginator = this.paginator;
+      this.serCtrl.gastosPorMes(qtd).subscribe((its) => {
+        //this.dataSource = new MatTableDataSource(its);
+        this.dataSource.data = its;
+        this.dataSource.sort = this.sort;
+      });
+    }
   }
 }

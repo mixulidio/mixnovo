@@ -14,7 +14,7 @@ export class ChavesCreateComponent implements OnInit {
   chavesStr: string;
   chaves : Chaves = {chave: null}; // TODO new ?
   spinnerWait = false;
-  chavesParaConsulta: NotaFiscal[];
+  chavesParaConsulta: string[];
   
   constructor(private serviceControlService: ServiceControlService, private router: Router) { }
 
@@ -23,33 +23,26 @@ export class ChavesCreateComponent implements OnInit {
 
   createProcess(){
     this.spinnerWait = true;
-    this.chaves.chave =  this.chavesStr.split("\n");
+    this.chaves.chave =  this.chavesStr.replace(" ","").split("\n");
+    this.chavesStr = "";
+    this.chavesParaConsulta = [];
+    var self = this;
     this.serviceControlService.createProcess(this.chaves).subscribe(ret => {
       this.spinnerWait = false;
       if( ret != null){
-        var erros:string;
+        var erros:string = "";
         ret.chave.forEach(element => {
           erros = erros + "\n" + element;
         });
-        if(erros != null ){
+        if(erros != null && erros != ""){
           this.chavesStr = "Chaves com erros ou já importadas:" + erros;
         }
       }
 
-      this.chaves.chave.forEach(function (value) {
-        this.chavesParaConsulta = value;
-        console.log(value);
+      self.chaves.chave.forEach(function (value) {
+        if(value != "")
+          self.chavesParaConsulta.push(value.trim());
       });
-
-
-/*
-      this.chavesParaConsulta = this.chaves.chave.map(function (p) {
-        var m :NotaFiscal;
-        m.chave = p;
-        return m;
-      })
-*/
-      console.log(this.chavesParaConsulta);
     })
   }
 

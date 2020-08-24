@@ -9,4 +9,6 @@ export interface NotaFiscal{
     valorDesconto: number;
     listaItens?: ItemNota[];
     cnpj?:string;
+    qtdNotas?:number;
+    qtdItens?:number;
 }

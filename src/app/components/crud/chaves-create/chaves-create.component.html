@@ -6,14 +6,13 @@
         </mat-form-field>
     </form>
 
-    <button mat-raised-button (click)="createProcess()" color="primary">
+    <button mat-raised-button (click)="createProcess()" color="primary" [disabled]="spinnerWait">
         Salvar
     </button>
     
     <mat-spinner *ngIf="spinnerWait"></mat-spinner>
 </mat-card>
 
-
 <div *ngIf="chavesParaConsulta != null" >
-    <nota-fiscal *ngFor="let c of chavesParaConsulta" (chave)="c.chave"></nota-fiscal>
+    <nota-fiscal *ngFor="let c of chavesParaConsulta" [chaveInput]="c"></nota-fiscal>
 </div>

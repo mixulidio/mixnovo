@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NotaFiscalComponent implements OnInit {
 
+  @Input() chaveInput:string;
   notaFiscal: NotaFiscal;
   spinnerWait = false;
 
@@ -19,10 +20,16 @@ export class NotaFiscalComponent implements OnInit {
 
   ngOnInit(): void {
     this.spinnerWait = true;
-    const chave = this.route.snapshot.params['chave'];
-    this.serviceControlService.consultaNotaFiscal(chave).subscribe(ret => {
+    if(this.chaveInput == null){
+      this.chaveInput = this.route.snapshot.params['chave'];
+    }
+    this.serviceControlService.consultaNotaFiscal(this.chaveInput).subscribe(ret => {
       this.notaFiscal = ret;
       this.spinnerWait = false;
+    }, (error) => {
+      this.notaFiscal = null;
+      this.spinnerWait = false;
+      console.log(this.chaveInput + ":" + error); // TOAST
     });
   }
 }

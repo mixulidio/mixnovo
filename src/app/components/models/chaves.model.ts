@@ -1,3 +1,3 @@
 export interface Chaves {
-    chave: string[];
+    chave?: string[];
 }
