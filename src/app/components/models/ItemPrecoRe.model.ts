@@ -8,4 +8,8 @@ export interface ItemNota{
     valorUnitario?: number;
     variacao?: number;
     valorTotal?: number;
+    totalGeral?: number;
+    avg?: number;
+    min?: number;
+    max?: number;
 }

@@ -11,7 +11,7 @@ import { ItemNota } from "../../models/ItemPrecoRe.model";
   styleUrls: ['./list1qtd.component.css']
 })
 export class List1qtdComponent implements OnInit {
-  displayedColumns: string[] = ["descricao", "qtd"];
+  displayedColumns: string[] = ["descricao", "qtd", "totalGeral", "min", "avg", "max"];
   dataSource = new MatTableDataSource<ItemNota>();
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;

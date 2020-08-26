@@ -4,10 +4,28 @@
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Descricao </th>
             <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
         </ng-container>
-
         <ng-container matColumnDef="qtd">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Quant. </th>
             <td mat-cell *matCellDef="let element"> <b> {{element.qtd}} </b> </td>
+        </ng-container>
+        <ng-container matColumnDef="totalGeral">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Total </th>
+            <td mat-cell *matCellDef="let element"> {{element.totalGeral | currency:'BRL':'symbol'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="min">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Min. </th>
+            <td mat-cell *matCellDef="let element"> <b> {{element.min  | currency:'BRL':'symbol'}} </b> </td>
+        </ng-container>
+
+        <ng-container matColumnDef="avg">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Média </th>
+            <td mat-cell *matCellDef="let element"> <i> {{element.avg | currency:'BRL':'symbol'}} </i>  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="max">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Máx. </th>
+            <td mat-cell *matCellDef="let element"> <b> {{element.max | currency:'BRL':'symbol'}} </b> </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

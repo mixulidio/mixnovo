@@ -41,6 +41,7 @@ import { ChaveReadQrcodeComponent } from './components/crud/chave-read-qrcode/ch
 
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { SnackbarComponent } from './components/messages/snackbar/snackbar.component';
 
 registerLocaleData(localePt);
 
@@ -57,7 +58,8 @@ registerLocaleData(localePt);
     GastosPorMesComponent,
     ChaveImportQrcodeComponent,
     NotaFiscalComponent,
-    ChaveReadQrcodeComponent
+    ChaveReadQrcodeComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,
