@@ -24,13 +24,16 @@ import { HomeComponent } from './components/templete/home/home.component';
 import { ChavesCreateComponent } from './components/crud/chaves-create/chaves-create.component';
 
 import { FormsModule }from '@angular/forms';
+
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatSortModule} from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSnackBarModule } from '@angular/material/snack-bar'; 
+
 import { List1qtdComponent } from './components/chart/list1qtd/list1qtd.component';
 import { GastosPorMesComponent } from './components/chart/gastos-por-mes/gastos-por-mes.component';
 
@@ -41,7 +44,6 @@ import { ChaveReadQrcodeComponent } from './components/crud/chave-read-qrcode/ch
 
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
-import { SnackbarComponent } from './components/messages/snackbar/snackbar.component';
 
 registerLocaleData(localePt);
 
@@ -58,8 +60,7 @@ registerLocaleData(localePt);
     GastosPorMesComponent,
     ChaveImportQrcodeComponent,
     NotaFiscalComponent,
-    ChaveReadQrcodeComponent,
-    SnackbarComponent
+    ChaveReadQrcodeComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +70,7 @@ registerLocaleData(localePt);
     MatToolbarModule, MatMenuModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatTableModule,
     HttpClientModule,
     FormsModule, MatFormFieldModule, MatInputModule, MatCardModule, MatProgressBarModule, MatProgressSpinnerModule,
-    MatPaginatorModule, MatSortModule,
+    MatPaginatorModule, MatSortModule, MatSnackBarModule,
     ZXingScannerModule
   ],
   providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
