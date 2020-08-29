@@ -3,6 +3,7 @@ import { Chaves } from './../../models/chaves.model';
 import { ServiceControlService } from './../../../services/service-control.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'chaves-create',
@@ -16,12 +17,16 @@ export class ChavesCreateComponent implements OnInit {
   spinnerWait = false;
   chavesParaConsulta: string[];
   
-  constructor(private serviceControlService: ServiceControlService, private router: Router) { }
+  constructor(private serviceControlService: ServiceControlService,
+              private notificationService: NotificationService) { }
 
   ngOnInit(): void {
   }
 
   createProcess(){
+    if(this.chavesStr == null || this.chavesStr.trim().length == 0){
+      return;
+    }
     this.spinnerWait = true;
     this.chaves.chave =  this.chavesStr.replace(" ","").split("\n");
     this.chavesStr = "";
@@ -35,8 +40,11 @@ export class ChavesCreateComponent implements OnInit {
           erros = erros + "\n" + element;
         });
         if(erros != null && erros != ""){
-          this.chavesStr = "Chaves com erros ou já importadas:" + erros;
+          this.notificationService.notify('Chaves com erros ou já importadas');
+          this.chavesStr = erros;
         }
+      } else {
+        this.notificationService.notify('Chave(s) importada(s) com sucesso.');
       }
 
       self.chaves.chave.forEach(function (value) {

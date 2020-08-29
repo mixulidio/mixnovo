@@ -1,8 +1,8 @@
-import { ItemNota } from './../../models/ItemPrecoRe.model';
 import { ServiceControlService } from './../../../services/service-control.service';
 import { NotaFiscal } from './../../models/notaFiscal.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'nota-fiscal',
@@ -16,7 +16,8 @@ export class NotaFiscalComponent implements OnInit {
   spinnerWait = false;
 
   constructor(private serviceControlService: ServiceControlService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private notificationService: NotificationService) { }
 
   ngOnInit(): void {
     this.spinnerWait = true;
@@ -29,7 +30,7 @@ export class NotaFiscalComponent implements OnInit {
     }, (error) => {
       this.notaFiscal = null;
       this.spinnerWait = false;
-      console.log(this.chaveInput + ":" + error); // TOAST
+      this.notificationService.notify('Erro: ' + this.chaveInput + " : " + error )
     });
   }
 }
