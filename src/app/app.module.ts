@@ -11,7 +11,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { NavComponent } from './components/template/nav/nav.component';
 import { MatButtonModule  } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table'
 
@@ -51,7 +50,6 @@ registerLocaleData(localePt);
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavComponent,
     Chart1Component,
     Chart2Component,
     HomeComponent,

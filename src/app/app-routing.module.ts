@@ -13,17 +13,19 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   //{ path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
-  {path: '', component: HomeComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'home/:id', component: HomeComponent},
-  {path: 'chart1', component: Chart1Component},
-  {path: 'chart2', component: Chart2Component},
-  {path: 'chaves-create', component: ChavesCreateComponent},
-  {path: 'list1qtd', component: List1qtdComponent},
-  {path: 'gastos-por-mes', component: GastosPorMesComponent},
-  {path: 'chave-import-qrcode', component: ChaveImportQrcodeComponent},
-  {path: 'chave-read-qrcode', component: ChaveReadQrcodeComponent},
-  {path: 'nota-fiscal/:chave', component: NotaFiscalComponent},
+  {
+    path: '', component: HomeComponent,
+    children:[
+      {path: 'chart1', component: Chart1Component},
+      {path: 'chart2', component: Chart2Component},
+      {path: 'chaves-create', component: ChavesCreateComponent},
+      {path: 'list1qtd', component: List1qtdComponent},
+      {path: 'gastos-por-mes', component: GastosPorMesComponent},
+      {path: 'chave-import-qrcode', component: ChaveImportQrcodeComponent},
+      {path: 'chave-read-qrcode', component: ChaveReadQrcodeComponent},
+      {path: 'nota-fiscal/:chave', component: NotaFiscalComponent},
+    ]
+  },
 ];
 
 @NgModule({
