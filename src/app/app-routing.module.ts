@@ -4,7 +4,7 @@ import { ChaveImportQrcodeComponent } from './components/crud/chave-import-qrcod
 import { GastosPorMesComponent } from './components/chart/gastos-por-mes/gastos-por-mes.component';
 import { List1qtdComponent } from './components/chart/list1qtd/list1qtd.component';
 import { ChavesCreateComponent } from './components/crud/chaves-create/chaves-create.component';
-import { HomeComponent } from './components/templete/home/home.component';
+import { HomeComponent } from './components/template/home/home.component';
 import { Chart2Component } from './components/chart/chart2/chart2.component';
 import { Chart1Component } from './components/chart/chart1/chart1.component';
 import { NgModule } from '@angular/core';

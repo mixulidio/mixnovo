@@ -11,7 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { NavComponent } from './components/templete/nav/nav.component';
+import { NavComponent } from './components/template/nav/nav.component';
 import { MatButtonModule  } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table'
 
@@ -20,7 +20,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { HeaderComponent } from './components/template/header/header.component';
 import { Chart1Component } from './components/chart/chart1/chart1.component';
 import { Chart2Component } from './components/chart/chart2/chart2.component';
-import { HomeComponent } from './components/templete/home/home.component';
+import { HomeComponent } from './components/template/home/home.component';
 import { ChavesCreateComponent } from './components/crud/chaves-create/chaves-create.component';
 
 import { FormsModule }from '@angular/forms';
