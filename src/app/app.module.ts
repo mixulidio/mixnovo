@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule }  from '@angular/common/http';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -43,6 +45,10 @@ import { ChaveReadQrcodeComponent } from './components/crud/chave-read-qrcode/ch
 
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { AuthenticationComponent } from './components/template/authentication/authentication.component';
+import { LoginComponent } from './components/template/login/login.component';
+import { LoginCreateComponent } from './components/template/login-create/login-create.component';
+import { httpInterceptorProviders } from './interceptors'
 
 registerLocaleData(localePt);
 
@@ -58,9 +64,13 @@ registerLocaleData(localePt);
     GastosPorMesComponent,
     ChaveImportQrcodeComponent,
     NotaFiscalComponent,
-    ChaveReadQrcodeComponent
+    ChaveReadQrcodeComponent,
+    AuthenticationComponent,
+    LoginComponent,
+    LoginCreateComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -71,7 +81,10 @@ registerLocaleData(localePt);
     MatPaginatorModule, MatSortModule, MatSnackBarModule,
     ZXingScannerModule
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [
+        httpInterceptorProviders,
+        {provide: LOCALE_ID, useValue: 'pt-BR'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

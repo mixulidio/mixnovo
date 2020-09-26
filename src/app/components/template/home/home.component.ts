@@ -1,4 +1,3 @@
-import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NotificationService } from './../../../services/notification.service';
 
@@ -9,19 +8,10 @@ import { NotificationService } from './../../../services/notification.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,
-              private notificationService: NotificationService) { }
+  constructor(private notificationService: NotificationService) { }
 
   ngOnInit(): void {
-    console.log(this.route.snapshot.params['id']);
-
-    this.route.paramMap.subscribe(params => {
-      console.log(params.get('id'));
-    });
-  }
-
-  openSnackBar(message){
-    this.notificationService.notify(message);
+    this.notificationService.notify("Bem vindo!");
   }
 
 }

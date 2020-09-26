@@ -15,10 +15,6 @@ export class ServiceControlService {
 
   constructor(private http: HttpClient) { }
 
-  log(msg: string){
-    console.log(msg);
-  }
-
   read(): Observable<ItemNota[]>{
     return this.http.get<ItemNota[]>(this.baseUrl + "/itemnota/listItemPerMonth");
   }
