@@ -1,8 +1,0 @@
-<zxing-scanner [enable]="scannerEnabled" #scanner (scanSuccess)="scanSuccessHandler($event)">
-</zxing-scanner>
-
-<button (click)="enableScanner()" *ngIf="!scannerEnabled" type="button" class="btn btn-success">LEER OTRO</button>
-
-<mat-spinner *ngIf="spinnerWait"></mat-spinner>
-
-<textarea matInput placeholder="Chaves..." rows="19" [(ngModel)]="chavesStr" name="chavesStr"></textarea>

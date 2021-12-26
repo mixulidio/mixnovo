@@ -1,0 +1,23 @@
+<div *ngIf="scannerEnabled" class="divtable">
+  <zxing-scanner
+    [enable]="scannerEnabled"
+    #scanner
+    (scanSuccess)="scanSuccessHandler($event)"
+  >
+  </zxing-scanner>
+</div>
+
+<mat-spinner *ngIf="spinnerWait"></mat-spinner>
+
+<div *ngIf="!scannerEnabled">
+  <br />
+
+  <mat-card style="width: 80%; left: 5%">
+    {{ chavesStr }}
+    <br />
+    <br />
+    <button (click)="enableScanner()" type="button" class="btn btn-success">
+      Ler outro
+    </button>
+  </mat-card>
+</div>

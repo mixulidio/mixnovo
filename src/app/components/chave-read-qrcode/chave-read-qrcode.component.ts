@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
 import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
-  selector: 'chave-import-qrcode',
-  templateUrl: './chave-import-qrcode.component.html',
-  styleUrls: ['./chave-import-qrcode.component.css']
+  selector: 'chave-read-qrcode',
+  templateUrl: './chave-read-qrcode.component.html',
+  styleUrls: ['./chave-read-qrcode.component.css']
 })
-export class ChaveImportQrcodeComponent implements OnInit {
+export class ChaveReadQrcodeComponent implements OnInit {
 
   @ViewChild('scanner', { static: false })
   scanner: ZXingScannerComponent;
@@ -19,42 +19,33 @@ export class ChaveImportQrcodeComponent implements OnInit {
   chavesStr: string;
   spinnerWait = false;
 
-  constructor(private serviceControlService: ServiceControlService, 
+  constructor(private serviceControlService: ServiceControlService,
               private router: Router,
-              private notificationService: NotificationService) { }
+              private notificationService: NotificationService) {}
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
   }
 
   public scanSuccessHandler($event: any) {
     this.spinnerWait = true;
     this.scannerEnabled = false;
     this.chavesStr = $event;
-    this.serviceControlService.processaNotaQrcode($event).subscribe(ret => {
+    var chave =  $event
+
+    this.serviceControlService.consultaNotaFiscal($event).subscribe(ret => {
       this.spinnerWait = false;
       this.chavesStr = "Ok " + ret;
-      this.notificationService.notify('Nota importada');
+      this.notificationService.notify('Requisição concluída.');
       this.router.navigate(["/nota-fiscal", ret.chave]);
     },(error) =>{
       this.spinnerWait = false;
-      this.chavesStr = "Erro: " + error.message;
-      this.notificationService.notify('Erro ao importar a nota: ' + error.message);
+      this.chavesStr = JSON.stringify( error.error.message );
+      this.notificationService.notify( error.error.message  );
     });
   }
 
   public enableScanner() {
     this.scannerEnabled = true; // !this.scannerEnabled; 
   }
+
 }
- 
-/*
-aprimorar
-
-https://zxing-js.github.io/library/
-
-https://www.npmjs.com/package/@zxing/ngx-scanner
-
-https://github.com/zxing-js/ngx-scanner
-https://github.com/zxing-js/ngx-scanner/wiki/Advanced-Usage
-
-*/

@@ -4,7 +4,11 @@
 
 export const environment = {
   production: false,
-  api: 'http://192.168.99.100:8080/'
+  //api2: "http://192.168.99.100:8080",
+  //api1: "https://192.168.99.100:8443",
+  //api: "http://177.153.51.252:8080",
+  api3: "http://localhost:8080",
+  api: "http://emelynbecker.com.br/api",
 };
 
 /*

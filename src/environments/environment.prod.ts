@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  api: 'http://192.168.99.100:8080/'
+  api1: "https://192.168.99.100:8443",
+  api: "http://emelynbecker.com.br/api",
 };

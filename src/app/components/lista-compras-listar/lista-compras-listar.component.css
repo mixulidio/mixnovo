@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+}
+
+#divtable{
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-width {
+    width: 100%;
+}
+

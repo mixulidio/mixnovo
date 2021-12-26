@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  mixnfx:
+    container_name: mixnfx
+    image: mixnfx
+    build: .
+    command: npm start
+    ports:
+      - 4200:4200
+    volumes: 
+      - .:/app
